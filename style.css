@@ -1,0 +1,117 @@
+/* --- CONFIGURAÇÕES GERAIS & VARIÁVEIS --- */
+:root {
+  --bg: #f8f3e7;
+  --bg-soft: #fffaf0;
+  --surface: rgba(255, 251, 244, 0.82);
+  --text: #2d241c;
+  --muted: #685a4d;
+  --line: rgba(120, 90, 40, 0.18);
+  --primary: #335f45;
+  --accent: #b27a2f;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --container: 1180px;
+  --shadow: 0 10px 30px rgba(59, 39, 17, 0.1);
+}
+
+/* --- RESET & ACESSIBILIDADE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  background-color: var(--bg); 
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* --- LAYOUT RESPONSIVO (Grid) --- */
+.hero-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* No desktop: 2 colunas */
+  gap: 40px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid Automático */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* --- COMPONENTES --- */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.action-btn {
+  background: var(--primary);
+  color: white;
+  padding: 15px 30px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.expandable-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: white;
+}
+
+.card-toggle {
+  width: 100%;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content {
+  display: none;
+  padding: 20px;
+  background: var(--bg-soft);
+}
+
+.expandable-card.open .card-content { display: block; }
+
+/* --- ANIMAÇÕES --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .card-toggle, 
+.high-contrast .action-btn {
+  background-color: #ff0 !important;
+  color: #000 !important;
+  border: 2px solid #fff;
+}
+
+/* --- MOBILE FIRST (Media Query) --- */
+@media (max-width: 768px) {
+  .hero-shell {
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+    text-align: center;
+  }
+}
