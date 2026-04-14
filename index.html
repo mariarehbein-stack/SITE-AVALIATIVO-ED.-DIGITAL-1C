@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroPure | A Essência da Cevada</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo">Agro<span>Pure</span></div>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#explorar">Explorar</a></li>
+          <li><a href="#tecnologia">Inovação</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="contrast-toggle" aria-label="Alternar Contraste">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero-full">
+      <div class="hero-content reveal">
+        <span class="tagline">Sustentabilidade do solo ao copo</span>
+        <h1>O Futuro da Cevada é Orgânico.</h1>
+        <p>Descubra como a tecnologia alemã e o solo brasileiro criam o malte perfeito.</p>
+        <div class="btn-group">
+          <a href="#explorar" class="btn-primary">Iniciar Jornada</a>
+          <a href="#video" class="btn-outline">Ver Documentário</a>
+        </div>
+      </div>
+      <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section id="explorar" class="page-section">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2>A Jornada do Grão</h2>
+          <p>Três etapas fundamentais na criação da nossa matéria-prima.</p>
+        </header>
+        
+        <div id="jornada-grid" class="jornada-grid"></div>
+      </div>
+    </section>
+
+    <section id="tecnologia" class="page-section bg-soft">
+      <div class="container grid-2">
+        <div class="reveal">
+          <span class="tagline">Inovação</span>
+          <h2>Tecnologia de Precisão</h2>
+          <p>Monitoramos cada hectare em tempo real para garantir o menor impacto ambiental possível.</p>
+          
+          <div id="accordion-tech" class="modern-accordion"></div>
+        </div>
+        <div class="visual-box reveal">
+          <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=800" alt="Drone sobrevoando plantação" class="img-rounded">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="accessibility-bar">
+    <button onclick="changeFontSize(1)" title="Aumentar texto">A+</button>
+    <button onclick="changeFontSize(-1)" title="Diminuir texto">A-</button>
+  </aside>
+
+  <footer class="main-footer">
+    <p>&copy; 2026 AgroPure Premium. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
