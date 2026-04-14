@@ -1,0 +1,79 @@
+:root {
+  --primary: #1b3022; /* Verde Profundo */
+  --accent: #c49a6c;  /* Dourado Cevada */
+  --text-dark: #2c2c2c;
+  --text-light: #f4f4f4;
+  --white: #ffffff;
+  --radius: 8px;
+  --transition: all 0.5s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Playfair Display', serif; line-height: 1.6; color: var(--text-dark); overflow-x: hidden; }
+
+/* --- Layout de "Páginas" --- */
+.full-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.section-padding { padding: 100px 0; }
+.container { width: min(1200px, 90%); margin: 0 auto; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+
+/* --- Header & Nav --- */
+.navbar {
+  position: fixed;
+  top: 0; width: 100%; z-index: 1000;
+  padding: 30px 0;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: var(--primary);
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { color: var(--white); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* --- Hero Section --- */
+.hero {
+  background: url('https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+}
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  color: var(--white);
+}
+
+.hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin: 20px 0; }
+
+/* --- Componentes Dinâmicos --- */
+.img-premium { width: 100%; border-radius: var(--radius); filter: sepia(20%); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  height: 350px;
+  background-size: cover;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-item:hover { transform: scale(1.03); }
+
+/* --- Animação Scroll --- */
+.reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
