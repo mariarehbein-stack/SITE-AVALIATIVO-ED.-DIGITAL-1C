@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Campo ao Copo | Sustentabilidade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header" id="topo">
+    <div class="header-inner">
+      <a class="logo" href="#inicio" aria-label="Voltar ao início">
+        <img src="logo.png" alt="Logo AgroSustentável">
+      </a>
+      
+      <nav class="navbar" aria-label="Navegação Principal">
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section reveal" id="inicio">
+      <div class="hero-shell">
+        <article class="hero-copy">
+          <span class="eyebrow">Inovação Agrícola</span>
+          <h1>A jornada sustentável da cevada ao malte</h1>
+          <p class="hero-lead">Conectando o campo à cidade através de processos tecnológicos que respeitam o meio ambiente.</p>
+          <div class="hero-actions">
+            <a href="#jornada" class="action-btn">Conhecer Processo</a>
+            <button onclick="toggleContrast()" class="secondary-btn">Alto Contraste</button>
+          </div>
+        </article>
+        
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=800" alt="Plantação de cevada ao pôr do sol">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="jornada">
+      <div class="section-heading">
+        <span class="section-tag">O Ciclo</span>
+        <h2>Do Campo à Indústria</h2>
+      </div>
+      
+      <div class="carousel-wrapper" role="region" aria-label="Carrossel de Processos">
+        <button class="carousel-btn left" onclick="changeSlide(-1)" aria-label="Slide anterior">❮</button>
+        <div class="carousel-slide">
+          <img id="carousel-image" src="" alt="">
+          <div class="carousel-caption">
+            <div>
+              <h3 id="carousel-title"></h3>
+              <p id="carousel-description"></p>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+          </div>
+        </div>
+        <button class="carousel-btn right" onclick="changeSlide(1)" aria-label="Próximo slide">❯</button>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="tecnologia">
+      <div class="section-heading">
+        <h2>Tecnologias Sustentáveis</h2>
+        <p>Clique nos cards para entender nossas inovações.</p>
+      </div>
+      <div class="cards-grid" id="expandable-container">
+        </div>
+    </section>
+  </main>
+
+  <div class="accessibility-menu hidden" id="accessibility-menu">
+    <button onclick="increaseFont()">Aumentar Fonte (+)</button>
+    <button onclick="decreaseFont()">Diminuir Fonte (-)</button>
+    <button onclick="toggleContrast()">Inverter Contraste</button>
+  </div>
+  
+  <button class="accessibility-fixed" id="accessibility-btn" aria-label="Menu de Acessibilidade">♿</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Projeto Do Campo ao Copo. Desenvolvido com foco em UX.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
